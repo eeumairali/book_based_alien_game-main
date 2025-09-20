@@ -7,7 +7,8 @@ class Bullet(Sprite):
         self.screen = screen
         self.rect = pygame.Rect(0,0, ai_setting.bullet_width, ai_setting.bullet_height)
         self.rect.centerx = ship.rect.centerx
-        self.rect.top = ship.rect.top
+        # place the bullet just above the ship so it is visible immediately
+        self.rect.bottom = ship.rect.top
 
         self.y = float(self.rect.y)
         self.color = ai_setting.bullet_color
